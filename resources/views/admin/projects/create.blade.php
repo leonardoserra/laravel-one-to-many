@@ -30,7 +30,7 @@
                   </div>
 
                   <div class="form-floating mb-3">
-                        <select class="form-select" name="type_id" id="type_id">
+                        <select class="form-select @error('type_id') is-invalid  @enderror" name="type_id" id="type_id">
                               <option @selected(old('$type_id') == '') value="">Nessuna Tipologia Assegnata</option>
 
                               @foreach ($types as $type)
@@ -49,7 +49,7 @@
                   <div class="form-floating mb-3">
                         <input name="description" type="text"
                               class="form-control @error('description') is-invalid @enderror" id="description"
-                              placeholder="Inserisci il titolo del progetto" value="{{ old('image_src') }}">
+                              placeholder="Inserisci il titolo del progetto" value="{{ old('description') }}">
                         <label for="description">Descrizione</label>
                         @error('description')
                               <div class="invalid-feedback">

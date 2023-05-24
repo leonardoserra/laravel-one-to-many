@@ -11,7 +11,7 @@
                         <h5 class="card-title">{{ $project->title }}</h5>
                         <h6 class="card-text">
                               Tipologia:
-                              {{ $project->type ? $project->type->type_name : 'Nessuna Tipologia Di Progetto Selezionata' }}
+                              {{ $project->type_id ? $project->type->type_name : 'Nessuna Tipologia Di Progetto Selezionata' }}
                               </h5>
                               <p class="card-text">
                                     {{ $project->description }}</p>
