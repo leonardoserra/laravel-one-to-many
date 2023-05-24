@@ -12,4 +12,9 @@ class Type extends Model
         'type_name',
         'slug'
     ];
+
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
+
 }
