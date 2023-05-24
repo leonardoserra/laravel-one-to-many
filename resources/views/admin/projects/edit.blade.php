@@ -32,6 +32,23 @@
                   </div>
 
                   <div class="form-floating mb-3">
+                        <select class="form-select" name="type_id" id="type_id">
+                              <option @selected(old('$type_id') == '') value="">Nessuna Tipologia Assegnata</option>
+
+                              @foreach ($types as $type)
+                                    <option @selected(old('$type_id') == $type->id) value="{{ $type->id }}">{{ $type->type_name }}
+                                    </option>
+                              @endforeach
+                        </select>
+                        <label for="type_id">Tipologia Project</label>
+                        @error('type_id')
+                              <div class="invalid-feedback">
+                                    {{ $message }}
+                              </div>
+                        @enderror
+                  </div>
+
+                  <div class="form-floating mb-3">
                         <input name="description" type="text"
                               class="form-control @error('description') is-invalid @enderror" id="description"
                               value="{{ old('image_src', $project->description) }}">
