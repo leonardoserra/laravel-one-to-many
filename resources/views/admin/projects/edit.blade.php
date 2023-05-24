@@ -33,10 +33,10 @@
 
                   <div class="form-floating mb-3">
                         <select class="form-select" name="type_id" id="type_id">
-                              <option @selected(old('$type_id') == '') value="">Nessuna Tipologia Assegnata</option>
+                              <option @selected(old('type_id') == '') value="">Nessuna Tipologia Assegnata</option>
 
                               @foreach ($types as $type)
-                                    <option @selected(old('$type_id') == $type->id) value="{{ $type->id }}">{{ $type->type_name }}
+                                    <option @selected(old('type_id') == $type->id) value="{{ $type->id }}">{{ $type->type_name }}
                                     </option>
                               @endforeach
                         </select>
