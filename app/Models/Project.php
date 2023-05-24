@@ -13,7 +13,8 @@ class Project extends Model
         'title',
         'image_src',
         'description',
-        'slug'
+        'slug',
+        'type_id'
     ];
 
     public static function convertIntoSlug(string $title) {

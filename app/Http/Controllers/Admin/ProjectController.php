@@ -41,7 +41,7 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $received_form = $request->validated();
-        
+        // dd($received_form);
         $received_form['slug'] = Project::convertIntoSlug($request->title);
 
         $checkProject = Project::where('slug', $received_form['slug'])->first();
@@ -89,7 +89,7 @@ class ProjectController extends Controller
     {
         $received_form = $request->validated();
         $received_form['slug'] = Project::convertIntoSlug($request->title);
-
+        // dd($received_form);
         $checkProject = Project::where('slug', $received_form['slug'])->where('id', '<>', $project->id)->first();
 
         if ($checkProject) {
